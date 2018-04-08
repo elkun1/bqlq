@@ -52,8 +52,9 @@ class Handle(object):
             if isinstance(recMsg, receive.Msg):
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
-                if recMsg.MsgType == 'text' and recMsg.Content == 'btc':
-                    content = "Price is $6,991.56"
+                if recMsg.MsgType == 'text' and recMsg.Content == 'btc':                
+                    response = request.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/")
+                    content = response
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
                 if recMsg.MsgType == 'image':
