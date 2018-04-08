@@ -21,6 +21,8 @@ import web
 import receive
 import reply
 import requests
+import json
+
 
 class Handle(object):
     def GET(self):
@@ -55,7 +57,8 @@ class Handle(object):
                 fromUser = recMsg.ToUserName
                 if recMsg.MsgType == 'text' and recMsg.Content == 'btc':                
                     response = requests.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/")
-                    content = response.content["name"]
+                    jsonresponse = json.parse(response.content)
+                    content = jsonresponse["name"]
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
                 if recMsg.MsgType == 'image':
