@@ -16,6 +16,7 @@ if __name__ == '__main__':
     app.run()
     
 """
+import web
 class Handle(object):
     def GET(self):
         try:
