@@ -17,7 +17,7 @@ if __name__ == '__main__':
     
 """
 import hashlib
-import webclass
+import web
 import receive
 import reply
 
