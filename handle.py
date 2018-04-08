@@ -16,6 +16,8 @@ if __name__ == '__main__':
     app.run()
     
 """
+# -*- coding: utf-8 -*-
+
 import hashlib
 import web
 import receive
