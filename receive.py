@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-# filename: receive.pyimport xml.etree.ElementTree as ETdef parse_xml(web_data):
+# -*- coding: utf-8 -*-# filename: receive.py
+import xml.etree.ElementTree as ETdef 
+parse_xml(web_data):
     if len(web_data) == 0:
         return None
     xmlData = ET.fromstring(web_data)
@@ -7,7 +9,8 @@
         return TextMsg(xmlData)
     elif msg_type == 'image':
         return ImageMsg(xmlData)
-    class Msg(object):
+    
+    class Msg(object):        
     def __init__(self, xmlData):
         self.ToUserName = xmlData.find('ToUserName').text
         self.FromUserName = xmlData.find('FromUserName').text

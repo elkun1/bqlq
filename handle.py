@@ -16,7 +16,8 @@ if __name__ == '__main__':
     app.run()
     
 """
-import web
+import hashlib
+import webclass
 import receive
 import reply
 
