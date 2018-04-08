@@ -17,7 +17,7 @@ if __name__ == '__main__':
     
 """
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# coding: utf8
 # filename: handle.py
 
 import hashlib
