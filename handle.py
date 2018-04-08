@@ -1,3 +1,20 @@
+# -*- coding: utf-8 -*-
+# filename: main.py
+import web
+
+urls = (
+    '/wx', 'Handle',
+)
+
+class Handle(object):
+    def GET(self):
+        return "hello, this is a test"
+
+if __name__ == '__main__':
+    app = web.application(urls, globals())
+    app.run()
+    
+"""
 class Handle(object):
     def GET(self):
         try:
@@ -37,3 +54,4 @@ class Handle(object):
                 return "success"
         except Exception, Argment:
             return Argment
+"""
