@@ -21,7 +21,7 @@ import web
 import receive
 import reply
 import requests
-import simplejson
+import json
 
 
 class Handle(object):
