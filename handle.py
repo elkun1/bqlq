@@ -20,7 +20,7 @@ import hashlib
 import web
 import receive
 import reply
-from flask import request
+import request
 
 class Handle(object):
     def GET(self):
