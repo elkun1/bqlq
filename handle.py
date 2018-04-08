@@ -1,3 +1,4 @@
+"""
 # -*- coding: utf-8 -*-
 # filename: main.py
 import web
@@ -54,4 +55,3 @@ class Handle(object):
                 return "success"
         except Exception, Argment:
             return Argment
-"""
