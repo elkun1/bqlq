@@ -52,7 +52,7 @@ class Handle(object):
             if isinstance(recMsg, receive.Msg):
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
-                if recMsg.MsgType == 'text':
+                if recMsg.MsgType == 'text' and recMsg.content == 'btc':
                     content = "correct"
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
