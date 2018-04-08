@@ -57,7 +57,7 @@ class Handle(object):
                 fromUser = recMsg.ToUserName
                 if recMsg.MsgType == 'text' and recMsg.Content == 'btc':                
                     response = requests.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/")
-                    jsonresponse = JSON.JSONEncoder().encode(response.content)
+                    jsonresponse = json.JSONEncoder().encode(response.content)
                     content = jsonresponse["name"]
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
