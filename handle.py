@@ -17,6 +17,9 @@ if __name__ == '__main__':
     
 """
 import web
+import receive
+import reply
+
 class Handle(object):
     def GET(self):
         try:
