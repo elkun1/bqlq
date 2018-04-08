@@ -6,7 +6,8 @@
     if msg_type == 'text':
         return TextMsg(xmlData)
     elif msg_type == 'image':
-        return ImageMsg(xmlData)class Msg(object):
+        return ImageMsg(xmlData)
+    class Msg(object):
     def __init__(self, xmlData):
         self.ToUserName = xmlData.find('ToUserName').text
         self.FromUserName = xmlData.find('FromUserName').text
