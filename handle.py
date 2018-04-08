@@ -53,7 +53,7 @@ class Handle(object):
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
                 if recMsg.MsgType == 'text' and recMsg.Content == 'btc':
-                    content = "correct"
+                    content = "Price is $6,991.56"
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
                 if recMsg.MsgType == 'image':
@@ -61,9 +61,9 @@ class Handle(object):
                     replyMsg = reply.ImageMsg(toUser, fromUser, mediaId)
                     return replyMsg.send()
                 else:
-                    return 'wrong'
+                    return 'Please type in the correct code'
             else:
                 print "Processing Temporarily Suspended"
-                return "success"
+                return "Please type in the correct code"
         except Exception, Argment:
             return Argment
