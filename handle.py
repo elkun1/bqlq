@@ -20,7 +20,7 @@ import hashlib
 import web
 import receive
 import reply
-import request
+import requests
 
 class Handle(object):
     def GET(self):
@@ -54,7 +54,7 @@ class Handle(object):
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
                 if recMsg.MsgType == 'text' and recMsg.Content == 'btc':                
-                    response = request.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/")
+                    response = requests.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/")
                     content = response
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
