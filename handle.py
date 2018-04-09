@@ -45,8 +45,7 @@ class Handle(object):
                     jsonresponse = json.loads(response.content)
                     content = '加密货币名称：比特币 交易代码：BTC 交易排名：'  + str(jsonresponse[0]['rank']) \
                     + ' 美金价格：' + str(jsonresponse[0]['price_usd'])  + '美元' + ' 比特币价格：' \
-                    + str(jsonresponse[0]['price_btc'])\n
-                    + ' 全部市值:' + str(jsonresponse[0]['market_cap_usd']) \
+                    + str(jsonresponse[0]['price_btc']) + '\n' + ' 全部市值:' + str(jsonresponse[0]['market_cap_usd']) \
                     + ' 24小时交易量：' + str(jsonresponse[0]['24h_volume_usd']) + ' 市场流通量：' \
                     + str(jsonresponse[0]['available_supply']) + ' 全部流通量：' + str(jsonresponse[0]['total_supply']) \
                     + ' 1小时价格变动：' + str(jsonresponse[0]['percent_change_1h']) + ' 24小时价格变动：' \
