@@ -44,23 +44,23 @@ class Handle(object):
                     response1 = requests.get("https://api.coinmarketcap.com/v1/ticker/?limit=10000")
                     jsonCoinList = json.loads(response1.content)
                     for i in jsonCoinList:
-                        if i['name'] == recMsg.Content:
-                            content = str(i['symbol'])
-                        
-                    requestText =  "https://api.coinmarketcap.com/v1/ticker/" + recMsg.Content + "/?convert=CNY"
-                    response2 = requests.get(requestText)
-                    jsonResponse = json.loads(response2.content)
-                    content += '加密货币名称：' + str(jsonResponse[0]['name']) + ' 交易代码：' + str(jsonResponse[0]['symbol']) \
-                    + ' 交易排名：'  + str(jsonResponse[0]['rank']) \
-                    + ' 美元价格：' + str(jsonResponse[0]['price_usd'])  + '美元\n' + ' 人民币价格：' \
-                    + str(jsonResponse[0]['price_cny'])  + '人民币' + ' 比特币价格：' \
-                    + str(jsonResponse[0]['price_btc']) + '比特币' + ' 全部市值:' + str(jsonResponse[0]['market_cap_usd']) \
-                    + '美元\n' + ' 24小时交易量：' + str(jsonResponse[0]['24h_volume_usd']) + '美元' + ' 市场流通量：' \
-                    + str(jsonResponse[0]['available_supply']) + ' 全部流通量：' + str(jsonResponse[0]['total_supply']) \
-                    + ' 1小时价格变动：' + str(jsonResponse[0]['percent_change_1h']) + '%\n' + ' 24小时价格变动：' \
-                    + str(jsonResponse[0]['percent_change_24h']) + '%' + ' 7天价格变动：' + str(jsonResponse[0]['percent_change_7d']) + '%'
-                    replyMsg = reply.TextMsg(toUser, fromUser, content)
-                    return replyMsg.send()
+                        if i['symbol'] == recMsg.Content:
+                            requestText =  "https://api.coinmarketcap.com/v1/ticker/" + i['name'] + "/?convert=CNY"
+                            response2 = requests.get(requestText)
+                            jsonResponse = json.loads(response2.content)
+                            content += '加密货币名称：' + str(jsonResponse[0]['name']) + ' 交易代码：' + str(jsonResponse[0]['symbol']) \
+                            + ' 交易排名：'  + str(jsonResponse[0]['rank']) \
+                            + ' 美元价格：' + str(jsonResponse[0]['price_usd'])  + '美元\n' + ' 人民币价格：' \
+                            + str(jsonResponse[0]['price_cny'])  + '人民币' + ' 比特币价格：' \
+                            + str(jsonResponse[0]['price_btc']) + '比特币' + ' 全部市值:' + str(jsonResponse[0]['market_cap_usd']) \
+                            + '美元\n' + ' 24小时交易量：' + str(jsonResponse[0]['24h_volume_usd']) + '美元' + ' 市场流通量：' \
+                            + str(jsonResponse[0]['available_supply']) + ' 全部流通量：' + str(jsonResponse[0]['total_supply']) \
+                            + ' 1小时价格变动：' + str(jsonResponse[0]['percent_change_1h']) + '%\n' + ' 24小时价格变动：' \
+                            + str(jsonResponse[0]['percent_change_24h']) + '%' + ' 7天价格变动：' + str(jsonResponse[0]['percent_change_7d']) + '%'
+                            replyMsg = reply.TextMsg(toUser, fromUser, content)
+                            return replyMsg.send()
+                        else:
+                            'the message is not successful'
                 if recMsg.MsgType == 'image':
                     mediaId = recMsg.MediaId
                     replyMsg = reply.ImageMsg(toUser, fromUser, mediaId)
