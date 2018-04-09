@@ -49,9 +49,9 @@ class Handle(object):
                     + ' 美元价格：' + str(jsonResponse[0]['price_usd'])  + '美元' + ' 人民币价格：' \
                     + str(jsonResponse[0]['price_cny'])  + '\n' + '人民币' + ' 比特币价格：' \
                     + str(jsonResponse[0]['price_btc']) + '比特币\n' + ' 全部市值:' + str(jsonResponse[0]['market_cap_usd']) \
-                    + '美元' + ' 24小时交易量：' + str(jsonResponse[0]['24h_volume_usd']) + '美元' + ' 市场流通量：' \
+                    + '美元' + ' 24小时交易量：' + str(jsonResponse[0]['24h_volume_usd']) + '美元' + '\n' + ' 市场流通量：' \
                     + str(jsonResponse[0]['available_supply']) + ' 全部流通量：' + str(jsonResponse[0]['total_supply']) \
-                    + '\n' + ' 1小时价格变动：' + str(jsonResponse[0]['percent_change_1h']) + '%' + ' 24小时价格变动：' \
+                    + ' 1小时价格变动：' + str(jsonResponse[0]['percent_change_1h']) + '%' + ' 24小时价格变动：' \
                     + str(jsonResponse[0]['percent_change_24h']) + '%' + ' 7天价格变动：' + str(jsonResponse[0]['percent_change_7d']) + '%'
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
