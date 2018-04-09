@@ -45,7 +45,7 @@ class Handle(object):
                     jsonCoinList = json.loads(response1.content)
                     for i in jsonCoinList:
                         if i['name'] == recMsg.Content:
-                            content = i['symbol']
+                            content = str(i['symbol'])
                         
                     requestText =  "https://api.coinmarketcap.com/v1/ticker/" + recMsg.Content + "/?convert=CNY"
                     response2 = requests.get(requestText)
