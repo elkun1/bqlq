@@ -48,7 +48,7 @@ class Handle(object):
                     + str(jsonresponse[0]['price_btc']) + '\n' + ' 全部市值:' + str(jsonresponse[0]['market_cap_usd']) \
                     + ' 24小时交易量：' + str(jsonresponse[0]['24h_volume_usd']) + ' 市场流通量：' \
                     + str(jsonresponse[0]['available_supply']) + ' 全部流通量：' + str(jsonresponse[0]['total_supply']) \
-                    + ' 1小时价格变动：' + str(jsonresponse[0]['percent_change_1h']) + ' 24小时价格变动：' \
+                    + '\n' + ' 1小时价格变动：' + str(jsonresponse[0]['percent_change_1h']) + ' 24小时价格变动：' \
                     + str(jsonresponse[0]['percent_change_24h']) + ' 7天价格变动：' + str(jsonresponse[0]['percent_change_7d'])
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
