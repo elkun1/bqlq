@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 # filename: main.py
+# -*- coding: utf-8 -*-
 import web
 from handle import Handle
 

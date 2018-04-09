@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 # filename: receive.py
+# -*- coding: utf-8 -*-
 import xml.etree.ElementTree as ET 
 def parse_xml(web_data):
         if len(web_data) == 0:

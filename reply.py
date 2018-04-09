@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 # filename: reply.py
+# -*- coding: utf-8 -*-
 import time
 
 class Msg(object):
