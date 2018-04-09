@@ -48,7 +48,7 @@ class Handle(object):
                             requestText =  "https://api.coinmarketcap.com/v1/ticker/" + i['name'] + "/?convert=CNY"
                             response2 = requests.get(requestText)
                             jsonResponse = json.loads(response2.content)
-                            content += '加密货币名称：' + str(jsonResponse[0]['name']) + ' 交易代码：' + str(jsonResponse[0]['symbol']) \
+                            global content += '加密货币名称：' + str(jsonResponse[0]['name']) + ' 交易代码：' + str(jsonResponse[0]['symbol']) \
                             + ' 交易排名：'  + str(jsonResponse[0]['rank']) \
                             + ' 美元价格：' + str(jsonResponse[0]['price_usd'])  + '美元\n' + ' 人民币价格：' \
                             + str(jsonResponse[0]['price_cny'])  + '人民币' + ' 比特币价格：' \
