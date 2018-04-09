@@ -41,10 +41,14 @@ class Handle(object):
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
                 if recMsg.MsgType == 'text':
+                    response1 = requests.get("https://api.coinmarketcap.com/v1/ticker/?limit=10000")
+                    jsonCoinList = json.loads(response1.content)
+                    content = str(jsonCoinList[1540]['name'])
+                    
                     requestText =  "https://api.coinmarketcap.com/v1/ticker/" + recMsg.Content + "/?convert=CNY"
-                    response = requests.get(requestText)
-                    jsonResponse = json.loads(response.content)
-                    content = '加密货币名称：' + str(jsonResponse[0]['name']) + ' 交易代码：' + str(jsonResponse[0]['symbol']) \
+                    response2 = requests.get(requestText)
+                    jsonResponse = json.loads(response2.content)
+                    content += '加密货币名称：' + str(jsonResponse[0]['name']) + ' 交易代码：' + str(jsonResponse[0]['symbol']) \
                     + ' 交易排名：'  + str(jsonResponse[0]['rank']) \
                     + ' 美元价格：' + str(jsonResponse[0]['price_usd'])  + '美元\n' + ' 人民币价格：' \
                     + str(jsonResponse[0]['price_cny'])  + '人民币' + ' 比特币价格：' \
