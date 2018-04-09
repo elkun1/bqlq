@@ -17,7 +17,7 @@ if __name__ == '__main__':
     
 """
 # filename: handle.py
-# -*- coding: utf-8 -*- 
+#coding:utf-8
 
 import hashlib
 import web
