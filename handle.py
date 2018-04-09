@@ -42,7 +42,7 @@ class Handle(object):
                 fromUser = recMsg.ToUserName
                 if recMsg.MsgType == 'text':
                     requestText =  "https://api.coinmarketcap.com/v1/ticker/" + recMsg.Content + "/?convert=CNY"
-                    response = requests.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=CNY")
+                    response = requests.get(requestText)
                     jsonResponse = json.loads(response.content)
                     content = '加密货币名称：比特币 交易代码：BTC 交易排名：'  + str(jsonResponse[0]['rank']) \
                     + ' 美元价格：' + str(jsonResponse[0]['price_usd'])  + '美元' + ' 人民币价格：' \
