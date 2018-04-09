@@ -43,7 +43,7 @@ class Handle(object):
                 if recMsg.MsgType == 'text' and recMsg.Content == 'btc':                
                     response = requests.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/")
                     jsonresponse = json.loads(response.content)
-                    content = u'请输入销售额'.encode('utf-8')
+                    content = '请输入销售额'
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
                 if recMsg.MsgType == 'image':
