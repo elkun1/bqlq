@@ -43,7 +43,7 @@ class Handle(object):
                 if recMsg.MsgType == 'text' and recMsg.Content == 'btc':                
                     response = requests.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/")
                     jsonresponse = json.loads(response.content)
-                    content = '币名称：比特币 交易代码：BTC 交易排名：'
+                    content = '币名称：比特币 交易代码：BTC 交易排名：'  + jsonresponse[0]['rank'] 
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
                 if recMsg.MsgType == 'image':
