@@ -40,7 +40,7 @@ class Handle(object):
             if isinstance(recMsg, receive.Msg):
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
-                if recMsg.MsgType == 'text' and recMsg.Content == 'bitcoin':
+                if recMsg.MsgType == 'text':
                     requestText =  "https://api.coinmarketcap.com/v1/ticker/" + recMsg.Content + "/?convert=CNY"
                     response = requests.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=CNY")
                     jsonResponse = json.loads(response.content)
